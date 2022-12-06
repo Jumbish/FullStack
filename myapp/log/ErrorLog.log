@@ -1,0 +1,6 @@
+06-Dec-2022 11:18:22 ERROR - '----The employee name is invalid.------' does not contain an equals sign
+java.lang.IllegalArgumentException: '----The employee name is invalid.------' does not contain an equals sign
+	at org.apache.commons.configuration2.AbstractConfiguration.getProperties(AbstractConfiguration.java:1155) ~[commons-configuration2-2.7.jar:2.7]
+	at org.apache.commons.configuration2.AbstractConfiguration.getProperties(AbstractConfiguration.java:1109) ~[commons-configuration2-2.7.jar:2.7]
+	at com.myapp.validator.Validator.validate(Validator.java:15) [classes/:?]
+	at com.myapp.Tester.main(Tester.java:12) [classes/:?]
