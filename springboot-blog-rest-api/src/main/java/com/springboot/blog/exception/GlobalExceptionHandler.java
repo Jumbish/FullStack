@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -59,6 +60,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
 
 	}
+	
 
 //	@ExceptionHandler(MethodArgumentNotValidException.class)
 //	public ResponseEntity<Object> catchMethodArgumentNotValidException(MethodArgumentNotValidException exception,
@@ -75,5 +77,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 //
 //		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
 //	}
+	
+	@ExceptionHandler(AccessDeniedException.class)
+	public ResponseEntity<ErrorDetails> catchResouceNotFound(AccessDeniedException accessDeniedException,
+			WebRequest webRequest) {
+		ErrorDetails errorDetails = new ErrorDetails(new Date(), accessDeniedException.getMessage(),
+				webRequest.getDescription(false), HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+	}
 
 }
