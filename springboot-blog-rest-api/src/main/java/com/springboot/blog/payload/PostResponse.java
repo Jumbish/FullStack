@@ -2,14 +2,7 @@ package com.springboot.blog.payload;
 
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class PostResponse {
 	
 	private List<PostDto> content;
@@ -18,10 +11,6 @@ public class PostResponse {
 	private long totalElements;
 	private int totalpages;
 	private boolean last;
-	public PostResponse() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	public List<PostDto> getContent() {
 		return content;
 	}
@@ -68,6 +57,11 @@ public class PostResponse {
 		this.totalpages = totalpages;
 		this.last = last;
 	}
+	public PostResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 	

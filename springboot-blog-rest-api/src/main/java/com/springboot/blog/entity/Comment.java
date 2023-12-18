@@ -1,14 +1,15 @@
 package com.springboot.blog.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.NoArgsConstructor;
 
 
@@ -38,10 +39,10 @@ public class Comment {
 		this.post = post;
 	}
 
-	public Comment() {
-		super();
-	}
-	
+//	public Comment() {
+//		super();
+//	}
+//	
 	public Comment(long id, String name, String email, String body) {
 		super();
 		this.id = id;

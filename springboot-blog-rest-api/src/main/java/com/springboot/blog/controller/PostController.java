@@ -1,6 +1,6 @@
 package com.springboot.blog.controller;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.blog.payload.PostDto;
 import com.springboot.blog.payload.PostResponse;
 import com.springboot.blog.service.PostService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/posts")
