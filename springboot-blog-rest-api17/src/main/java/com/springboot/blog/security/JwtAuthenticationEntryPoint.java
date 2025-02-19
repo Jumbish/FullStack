@@ -8,7 +8,7 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-
+// block unauthorized user
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 

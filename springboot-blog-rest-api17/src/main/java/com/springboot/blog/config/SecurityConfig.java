@@ -22,15 +22,12 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 
 @Configuration
 @EnableMethodSecurity
-
 @SecurityScheme(
 		name="Bear Authentication",
 		type= SecuritySchemeType.HTTP,
 		bearerFormat = "JWT",
 		scheme = "bearer"
 )
-
-
 
 public class SecurityConfig {
 
@@ -57,7 +54,7 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
-
+    //in http basic authication we have to pass the username and password in header of the request.
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 

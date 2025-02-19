@@ -14,10 +14,12 @@ import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
-
+	
+	//to Access the value from property file
     @Value("${app.jwt-secret}")
     private String jwtSecret;
 
+	//to Access the value from property file
     @Value("${app-jwt-expiration-milliseconds}")
     private long jwtExpirationDate;
 

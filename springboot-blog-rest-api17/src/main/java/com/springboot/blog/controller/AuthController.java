@@ -22,6 +22,7 @@ public class AuthController {
     }
 
     // Build Login REST API
+    //return the token
     @PostMapping(value = {"/login", "/signin"})
     public ResponseEntity<JWTAuthResponse> login(@RequestBody LoginDto loginDto){
         String token = authService.login(loginDto);
